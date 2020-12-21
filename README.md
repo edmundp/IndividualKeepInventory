@@ -4,7 +4,7 @@ This is a simple plugin I have made, which allows you to set the `keepInventory`
 
 ## Server Requirements:
 - **Java 8**;
-- **If you use a Bukkit-based server (Craftbukkit/Spigot/Paper/etc...):** This was tested in version 1.12.2 of Minecraft; in theory this should work as far back as 1.8.8 though.
+- **If you use a Bukkit-based server (Craftbukkit/Spigot/Paper/etc...):** This was tested in version 1.12.2 of Minecraft; in theory, this should work as far back as 1.8.8 though (and newer versions too).
 - **If you use a Sponge-based server (SpongeVanilla/SpongeForge/etc...?):** This was tested in version 1.12.2 of Minecraft and version 7.3.0 of SpongeVanilla; in theory, as long as your server version supports that API version you should be fine.
 </br></br>
 
@@ -40,7 +40,9 @@ And there might be other use-cases I could spend 40 more hours covering here.
 
 **Instructions:**</br>
 1 - With Git, `git clone` this repository;</br>
-2 - Use `mvn clean install` on the root directory of the project.
+2 - Use `mvn clean install` on the root directory of the project.</br>
+The plugin should be in `<project's root>/jar/target/`, named `IndividualKeepInventory-<versionTag>.jar`. Do not use the one with the `original-` prefix.
+</br></br>
 
 ## License
 This program is free software: you can redistribute it and/or modify
