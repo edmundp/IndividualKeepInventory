@@ -1,0 +1,9 @@
+main: io.github.logics4.individualkeepinventory.bukkit.IKI
+name: ${project.parent.name}
+authors: [${project.authors}]
+version: ${project.parent.version}
+description: ${project.parent.description}
+
+permissions:
+  iki.events.playerdeath.keepinventory:
+    default: false

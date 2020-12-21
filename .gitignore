@@ -1,0 +1,32 @@
+# The preferred IDE/text editor for this project is VS Code
+
+.settings/*
+.vscode/*
+
+common/.settings/*
+common/target/*
+common/.classpath
+common/.factorypath
+common/.project
+
+bukkit/.settings/*
+bukkit/target/*
+bukkit/.classpath
+bukkit/.factorypath
+bukkit/.project
+
+sponge/.settings/*
+sponge/target/*
+# How does \/ this folder \/ even come to existence?!
+sponge/bin/*
+sponge/.classpath
+sponge/.factorypath
+sponge/.project
+
+jar/.settings/*
+jar/target/*
+jar/.classpath
+jar/.factorypath
+jar/.project
+
+.project
