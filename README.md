@@ -35,7 +35,7 @@ And there might be other use-cases I could spend 40 more hours covering here.
 
 ## How to Compile
 **Requirements:**
-- Although the plugin is compatible and runs in JRE 8, you will need **JDK 11 or higher** to compile the source code;
+- **JDK 8 or higher**;
 - **Maven 3.6.3 or higher**.</br>
 
 **Instructions:**</br>
