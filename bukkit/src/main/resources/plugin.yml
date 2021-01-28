@@ -1,6 +1,6 @@
 main: io.github.logics4.individualkeepinventory.bukkit.IKI
 name: ${project.parent.name}
-authors: [${project.authors}]
+authors: ["Logics4"]
 version: ${project.parent.version}
 description: ${project.parent.description}
 

@@ -26,7 +26,11 @@ import org.spongepowered.api.plugin.Plugin;
 
 import io.github.logics4.individualkeepinventory.common.Constants;
 
-@Plugin(id = "${project.parent.artifactId}", name = "${project.parent.name}", version = "${project.parent.version}", description = "${project.parent.description}", authors = {${project.authors}})
+@Plugin(id = "${project.parent.artifactId}",
+    name = "${project.parent.name}",
+    authors = {"Logics4"},
+    version = "${project.parent.version}",
+    description = "${project.parent.description}")
 public class IKI {
 
     @Listener
