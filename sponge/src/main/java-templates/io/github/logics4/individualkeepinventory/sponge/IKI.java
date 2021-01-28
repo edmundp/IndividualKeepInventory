@@ -30,7 +30,8 @@ import io.github.logics4.individualkeepinventory.common.Constants;
     name = "${project.parent.name}",
     authors = {"Logics4"},
     version = "${project.parent.version}",
-    description = "${project.parent.description}")
+    description = "${project.parent.description}",
+    url = "${project.parent.url}")
 public class IKI {
 
     @Listener
