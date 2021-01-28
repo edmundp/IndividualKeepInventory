@@ -21,6 +21,11 @@
             <name>Sponge Maven Repository</name>
             <url>https://repo.spongepowered.org/maven</url>
         </repository>
+
+        <repository>
+            <id>CodeMC</id>
+            <url>https://repo.codemc.org/repository/maven-public</url>
+          </repository>
     </repositories>
 
     <dependencies>
@@ -28,7 +33,7 @@
             <groupId>io.github.logics4</groupId>
             <artifactId>individualkeepinventory-common</artifactId>
             <version>${project.parent.version}</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -37,6 +42,13 @@
             <version>7.3.0</version>
             <type>jar</type>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-sponge-lite</artifactId>
+            <version>1.8</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

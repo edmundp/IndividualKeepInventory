@@ -1,5 +1,7 @@
 /*
-This file is part of the "Individual Keep-Inventory" project (https://github.com/Logics4/IndividualKeepInventory)
+This file is part of the "IndividualKeepInventory" project.
+You can find it here: https://github.com/Logics4/IndividualKeepInventory
+
 Copyright (C) 2020  Logics4
 
 This program is free software: you can redistribute it and/or modify
@@ -18,13 +20,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 package io.github.logics4.individualkeepinventory.sponge;
 
+import com.google.inject.Inject;
+
+import io.github.logics4.individualkeepinventory.common.Constants;
+
+import org.bstats.sponge.MetricsLite2;
+
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.entity.DestructEntityEvent;
 import org.spongepowered.api.event.filter.Getter;
 import org.spongepowered.api.plugin.Plugin;
-
-import io.github.logics4.individualkeepinventory.common.Constants;
 
 @Plugin(id = "${project.parent.artifactId}",
     name = "${project.parent.name}",
@@ -33,6 +39,12 @@ import io.github.logics4.individualkeepinventory.common.Constants;
     description = "${project.parent.description}",
     url = "${project.parent.url}")
 public class IKI {
+
+    @Inject
+    public IKI(MetricsLite2.Factory metricsFactory) {
+        int bStatsId = 10158; // plugin ID for bStats for Sponge
+        metricsFactory.make(bStatsId);
+    }
 
     @Listener
     public void onPlayerDeath(DestructEntityEvent.Death event, @Getter("getTargetEntity")Player player) {

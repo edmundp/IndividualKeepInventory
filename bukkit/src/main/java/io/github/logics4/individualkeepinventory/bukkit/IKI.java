@@ -1,5 +1,7 @@
 /*
-This file is part of the "Individual Keep-Inventory" project (https://github.com/Logics4/IndividualKeepInventory)
+This file is part of the "IndividualKeepInventory" project.
+You can find it here: https://github.com/Logics4/IndividualKeepInventory
+
 Copyright (C) 2020  Logics4
 
 This program is free software: you can redistribute it and/or modify
@@ -20,6 +22,8 @@ package io.github.logics4.individualkeepinventory.bukkit;
 
 import io.github.logics4.individualkeepinventory.common.Constants;
 
+import org.bstats.bukkit.MetricsLite;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -30,6 +34,9 @@ public class IKI extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
+
+        int bStatsId = 10156; // Plugin ID for bStats for Bukkit
+        new MetricsLite(this, bStatsId);
     }
 
     @EventHandler
