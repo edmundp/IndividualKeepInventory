@@ -1,5 +1,7 @@
 /*
-This file is part of the "Individual Keep-Inventory" project (https://github.com/Logics4/IndividualKeepInventory)
+This file is part of the "IndividualKeepInventory" project.
+You can find it here: https://github.com/Logics4/IndividualKeepInventory
+
 Copyright (C) 2020  Logics4
 
 This program is free software: you can redistribute it and/or modify
