@@ -24,7 +24,9 @@ import io.github.logics4.individualkeepinventory.common.Constants;
 
 import org.bstats.bukkit.MetricsLite;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -45,34 +47,30 @@ public class IKI extends JavaPlugin implements Listener {
         new MetricsLite(this, bStatsId);
     }
 
+    private ItemStack getPlayerHead(Player player, Player killedBy) {
+        ItemStack item = new ItemStack(Material.PLAYER_HEAD);
+        SkullMeta skull = (SkullMeta)item.getItemMeta();
+        skull.setOwningPlayer(player);
+        List<String> lore = new ArrayList<>();
+        lore.add("Killed by " + killedBy.getName());
+        skull.setLore(lore);
+        item.setItemMeta(skull);
+        return item;
+    }
+
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         if (event.getEntity().hasPermission(Constants.IKI_KEEPINVENTORY_PERMISSION)) {
             // Inventory is kept, but XP will be still be lost
             event.setKeepInventory(true);
-
-            // Remove all drops except for player heads
-            // This also handles scenarios where the inventory has player heads
-            ItemStack playerHeadStack = null;
-            for (ItemStack item : event.getDrops()) {
-                if (item.getType() == Material.SKULL_ITEM) {
-                    SkullMeta skull = (SkullMeta)item.getItemMeta();
-                    // Make sure the player head is of the killed player
-                    if (skull.hasOwner() && skull.getOwningPlayer().equals(event.getEntity())) {
-                        // Ensure amount is not more than 1
-                        item.setAmount(1);
-
-                        if (playerHeadStack == null) {
-                            playerHeadStack = item;
-                        }
-                    }
-                }
-            }
-
             event.getDrops().clear();
-            if (playerHeadStack != null) {
-                event.getDrops().add(playerHeadStack);
-            }
+        }
+
+        // Drop player head
+        Player killedBy = event.getEntity().getKiller();
+        if (killedBy != null) {
+            ItemStack playerHead = getPlayerHead(event.getEntity(), killedBy);
+            event.getDrops().add(playerHead);
         }
     }
 }
